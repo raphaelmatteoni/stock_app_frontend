@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchStockData } from '../actions/stock';
+import { fetchStockData } from '../../actions/stock';
+import styles from './TickerInput.module.css';
 
 const TickerInput = () => {
   const [ticker, setTicker] = useState('');
@@ -15,15 +16,16 @@ const TickerInput = () => {
   };
 
   return (
-    <div>
-      <label htmlFor="ticker">Enter a stock ticker:</label>
+    <div className={styles.searchContainer}>
+      <label htmlFor="searchInput" className={styles.label}>Enter a stock ticker:</label>
       <input
         id="ticker"
         type="text"
+        className={styles.searchInput}
         value={ticker}
         onChange={handleInputChange}
       />
-      <button onClick={handleSearchClick} className="btn-primary">
+      <button className={styles.searchButton} onClick={handleSearchClick}>
         Search
       </button>
     </div>

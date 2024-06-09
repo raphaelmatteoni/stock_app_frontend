@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import styles from './StockTable.module.css';
 
 const StockTable = () => {
   const { data, error } = useSelector(state => ({
@@ -8,7 +9,7 @@ const StockTable = () => {
   }));
 
   if (error) {
-    return <div><p>Error: {error}</p></div>;
+    return <div className={styles.errorMessage}><p>Error: {error}</p></div>;
   }
 
   if (!data || Object.keys(data).length === 0) {
@@ -19,7 +20,7 @@ const StockTable = () => {
   const volumeInfo = data.volumes;
 
   return (
-    <table>
+    <table className={styles.table}>
       <thead>
         <tr>
           <th>Item</th>
@@ -31,9 +32,9 @@ const StockTable = () => {
       <tbody>
         <tr key="price">
           <td>Price</td>
-          <td>{priceInfo.max_price}</td>
-          <td>{priceInfo.min_price}</td>
-          <td>{priceInfo.avg_price}</td>
+          <td>${priceInfo.max_price}</td>
+          <td>${priceInfo.min_price}</td>
+          <td>${priceInfo.avg_price}</td>
         </tr>
         <tr key="volume">
           <td>Volume</td>

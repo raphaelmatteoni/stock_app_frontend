@@ -8,7 +8,6 @@ const stockReducer = (state = initialState, action) => {
     case 'FETCH_STOCK_DATA_SUCCESS':
       return {...state, data: action.payload, error: null };
     case 'FETCH_STOCK_DATA_FAILURE':
-      debugger;
       return {...state, error: action.payload.error };
     default:
       return state;

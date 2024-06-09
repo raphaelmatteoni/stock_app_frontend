@@ -1,6 +1,6 @@
 import React from 'react';
-import TickerInput from './components/TickerInput';
-import StockTable from './components/StockTable';
+import TickerInput from './components/TickerInput/TickerInput';
+import StockTable from './components/StockTable/StockTable';
 
 function App() {
   return (
