@@ -8,12 +8,15 @@ const StockTable = () => {
   }));
 
   if (error) {
-    return <p>Error: {error}</p>;
+    return <div><p>Error: {error}</p></div>;
   }
 
   if (!data || Object.keys(data).length === 0) {
     return <p>Loading...</p>;
   }
+
+  const priceInfo = data.prices;
+  const volumeInfo = data.volumes;
 
   return (
     <table>
@@ -28,15 +31,15 @@ const StockTable = () => {
       <tbody>
         <tr key="price">
           <td>Price</td>
-          <td>{data.max_price}</td>
-          <td>{data.min_price}</td>
-          <td>{data.avg_price}</td>
+          <td>{priceInfo.max_price}</td>
+          <td>{priceInfo.min_price}</td>
+          <td>{priceInfo.avg_price}</td>
         </tr>
         <tr key="volume">
           <td>Volume</td>
-          <td>{data.max_volume}</td>
-          <td>{data.min_volume}</td>
-          <td>{data.avg_volume}</td>
+          <td>{volumeInfo.max_volume}</td>
+          <td>{volumeInfo.min_volume}</td>
+          <td>{volumeInfo.avg_volume}</td>
         </tr>
       </tbody>
     </table>
