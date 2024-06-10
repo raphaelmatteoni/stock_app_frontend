@@ -18,7 +18,7 @@ docker-compose up --build
 ## Accessing the Application
 Once the Docker containers are up and running, you can access your application in a web browser at:
 
-- http://localhost:3000/stocks?ticker=AAPL&start_date=2023-01-01&end_date=2023-12-31
+- http://localhost:4000
 
 ## Port Number
 Replace 4000 with the port number specified in your Docker configuration if it's different.
