@@ -1,4 +1,4 @@
-# Stock App Backend
+# Stock App Frontend
 
 ## Description
 This is a React application that calculates stock metrics based on a specified ticker and date range. It uses external services to fetch market data and performs calculations to determine maximum, minimum, and average prices, as well as maximum, minimum, and average volumes.
